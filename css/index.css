@@ -51,3 +51,10 @@ nav ul li a {
     text-align: center;
 
 }
+.Hero-section{
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
