@@ -1,6 +1,22 @@
+:root {
+    --bg-color: #FFFFFF;
+    --secondary-color: #EFF6FF;
+    --text-color: #333333;
+    --btn-color: #2563EB ;
+    --font-pranciapal: "Outfit", sans-serif;
+    --main-padding: 20px;
+
+
+
+}
+
+
 body {
+    font-family: var(--font-pranciapal);
+
     padding: 0;
     margin: 0;
+    background-color: var(--bg-color);
 }
 
 nav {
@@ -9,22 +25,29 @@ nav {
 }
 
 nav img {
-    width: 100px;
-    height: 50px;
+    width: 200px;
+    height: 100px;
 }
 
 nav ul {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     gap: 5px;
+    padding-top: 30px;
+    justify-content: center;
 
 }
 
 nav ul li {
     font-size: 10px;
     list-style: none;
+
+
 }
 
 nav ul li a {
     text-decoration: none;
+    text-align: center;
 
 }
