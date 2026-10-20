@@ -1,0 +1,30 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 100px;
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    gap: 5px;
+
+}
+
+nav ul li {
+    font-size: 10px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+
+}
