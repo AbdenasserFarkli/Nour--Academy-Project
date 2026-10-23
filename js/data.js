@@ -30,7 +30,6 @@ const courses = [
     { id: 23, matiere: "Mathématiques", niveau: "6e année primaire", centre: "Nador Centre", horaire: "Lun. et mer. · 17h–18h", prix: 250, icon: "fa-calculator" },
     { id: 24, matiere: "Activité scientifique", niveau: "6e année primaire", centre: "Nador Centre", horaire: "Sam. · 10h–11h", prix: 250, icon: "fa-flask" },
 
-    // ===== COLLÈGE =====
     { id: 25, matiere: "Arabe", niveau: "1e année collège", centre: "Nador Centre", horaire: "Lun. et mer. · 16h–17h30", prix: 250, icon: "fa-book" },
     { id: 26, matiere: "Français", niveau: "1e année collège", centre: "Nador Centre", horaire: "Mar. et jeu. · 16h–17h30", prix: 250, icon: "fa-book-open" },
     { id: 27, matiere: "Anglais", niveau: "1e année collège", centre: "Nador Centre", horaire: "Sam. · 11h–12h30", prix: 250, icon: "fa-language" },
@@ -58,7 +57,6 @@ const courses = [
     { id: 47, matiere: "Histoire-Géographie", niveau: "3e année collège", centre: "Nador Centre", horaire: "Sam. · 14h–15h30", prix: 300, icon: "fa-earth-africa" },
     { id: 48, matiere: "Éducation islamique", niveau: "3e année collège", centre: "Nador Centre", horaire: "Sam. · 15h30–17h", prix: 300, icon: "fa-book" },
 
-    // ===== LYCÉE =====
     { id: 49, matiere: "Arabe", niveau: "1e année lycee", centre: "Nador Centre", horaire: "Lun. · 16h–17h30", prix: 300, icon: "fa-book" },
     { id: 50, matiere: "Français", niveau: "1e année lycee", centre: "Nador Centre", horaire: "Mar. · 16h–17h30", prix: 300, icon: "fa-book-open" },
     { id: 51, matiere: "Anglais", niveau: "1e année lycee", centre: "Nador Centre", horaire: "Mer. · 16h–17h30", prix: 300, icon: "fa-language" },
@@ -87,19 +85,66 @@ const courses = [
     { id: 72, matiere: "Philosophie", niveau: "2e année bac", centre: "Nador Centre", horaire: "Sam. · 15h30–17h", prix: 350, icon: "fa-brain" },
     { id: 73, matiere: "Éducation islamique", niveau: "2e année bac", centre: "Nador Centre", horaire: "Sam. · 17h–18h30", prix: 350, icon: "fa-book" },
 
-    // ===== INFORMATIQUE =====
     { id: 74, matiere: "Informatique", niveau: "3e année collège", centre: "Nador Centre", horaire: "Sam. · 10h–11h30", prix: 250, icon: "fa-laptop-code" },
     { id: 75, matiere: "Informatique", niveau: "1e année lycee", centre: "Nador Centre", horaire: "Sam. · 11h30–13h", prix: 300, icon: "fa-laptop-code" },
     { id: 76, matiere: "Informatique", niveau: "1e année bac", centre: "Nador Centre", horaire: "Sam. · 14h–15h30", prix: 350, icon: "fa-laptop-code" },
-    { id: 77, matiere: "Informatique", niveau: "2e année bac", centre: "Nador Centre", horaire: "Sam. · 15h30–17h", prix: 350, icon: "fa-laptop-code" }
 ];
 
-const Cours = document.querySelector("#cart-cours")
-const showInHtml = courses.map((project, index) => {
-    return `
-            <section id="cours " class=" grid  grid-cols-1  mt-5    justify-items-center ">
 
-       <div class="h-[400px]  border-black border-[2px] w-[90%] mt-5  rounded-[16px]  ">
+const Cours = document.querySelector("#cart-cours")
+const nev = document.getElementById("Niveau")
+const matiere = document.getElementById("Matière")
+const center = document.getElementById("Centre")
+const itemsss = document.getElementById("items")
+
+
+
+
+function listenData() {
+
+    matiere.addEventListener("change", () => {
+
+        FilterData()
+
+
+
+
+    })
+
+    nev.addEventListener("change", () => {
+
+        FilterData()
+
+
+
+    })
+
+    center.addEventListener("change", () => {
+
+
+        FilterData()
+
+
+    })
+}
+
+
+function FilterData() {
+    const filter = courses.filter((checkker) => {
+        return (checkker.centre === center.value || center.value === "") &&
+            (checkker.matiere === matiere.value || matiere.value === "") &&
+            (checkker.niveau === nev.value || nev.value === "")
+    })
+
+    renderCourses(filter)
+}
+
+function renderCourses(copycousrs = courses) {
+    Cours.innerHTML = ""
+    const showInHtml = copycousrs.map((project) => {
+        return `
+        
+       <div class="h-[400px]  border-black border-[2px] w-[90%] lg:w-full mt-5  rounded-[16px]  ">
 
                 <h3 class="mt-3 ml-8 text-2xl font-bold">${project.matiere}</h3>
                 <p class="mt-3 ml-10">${project.niveau}</p>
@@ -112,20 +157,71 @@ const showInHtml = courses.map((project, index) => {
                     <p class="mt-3">${project.horaire}</p>
                 </div>
                 <hr class="w-[100%] mt-7 ">
-                <p class="text-2xl font-bold mt-5 ml-3 text-[#1E293B]">${project.prix}</p>
+                <p class="text-2xl font-bold mt-5 ml-3 text-[#1E293B]">${project.prix} MAD </p>
 
                 <p class="text-[#1E293B] ml-3">par mois</p>
                 <button class="mt-8 ml-4 bg-[#2563EB] w-[90%] h-20 text-center text-[20px] rounded-2xl"
-                    type="button">Ajouter à ma sélection <span class="ml-2 text-2xl text-white">+</span></button>
-
-
-
-
-
+                    type="button"    onclick="addToPanier(${project.id},this)"  >Ajouter à ma sélection <span class="ml-2 text-2xl text-white">+</span></button>
 
             </div>
-</section>
     `
+    })
 
-})
-Cours.innerHTML = showInHtml
+    Cours.innerHTML = showInHtml
+}
+let arr = []
+
+function addToPanier(id, ele) {
+    arr.push(id)
+    localStorage.setItem("user-cart", JSON.stringify(arr))
+    let items = (JSON.parse(localStorage.getItem("user-cart")));
+    document.getElementById("cart-shoping").innerHTML = items.length
+    ele.style.backgroundColor = "#9CA3AF";
+    ele.disabled = true;
+}
+let data = courses
+function getcartitems() {
+    let chose = []
+    let items = (JSON.parse(localStorage.getItem("user-cart")));
+    for (let i = 0; i < items.length; i++) {
+        console.log(items[i]);
+        chose.push(data.find((data) => data.id == items[i]))
+
+
+
+    }
+    addcartTopagecart(chose)
+
+
+}
+function addcartTopagecart(items) {
+    itemsss.innerHTML = ""
+    const showInHtml = items.map((project) => {
+        return `
+        
+       <div class="h-[300px]  border-black border-[2px] w-[80%] lg:w-full mt-5   rounded-[16px]  ">
+
+                <h3 class="mt-3 ml-8 text-2xl font-bold">${project.matiere}</h3>
+                <p class="mt-3 ml-10">${project.niveau}</p>
+                <div class="flex gap-2">
+                    <i class="fa-solid fa-location-dot fa-sm mt-5 ml-10" style="color: rgb(116, 192, 252);"></i>
+                    <p class="mt-3">${project.centre}</p>
+                </div>
+                <div class="flex gap-2">
+                    <i class="fa-regular fa-clock fa-sm mt-5 ml-10" style="color: rgb(116, 192, 252);"></i>
+                    <p class="mt-3">${project.horaire}</p>
+                </div>
+                <hr class="w-[100%] mt-7 ">
+                <p class="text-2xl font-bold mt-5 ml-3 text-[#1E293B]">${project.prix} MAD </p>
+
+                <p class="text-[#1E293B] ml-3">par mois</p>
+             
+            </div>
+    `
+    })
+
+    itemsss.innerHTML = showInHtml
+}
+
+renderCourses();
+listenData();

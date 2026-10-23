@@ -21,15 +21,20 @@
 
 <body>
     <header>
-        <nav>
+        <nav class=" lg:flex lg:justify-around">
             <div><img src="/image/logo.webp" alt="Logo Nour Academy"></div>
-            <div id="My-side-nav">
+            <div id="My-side-nav ">
 
-                <ul>
-                    <li><a href="">Accueil</a></li>
-                    <li><a href="">Nos cours</a></li>
-                    <li><a href="">Nos centres</a></li>
-                    <li><a href="">Contact</a></li>
+
+
+                <ul class="flex flex-col items-center gap-[5px] pt-[30px] justify-center lg:flex-row lg:gap-5 ">
+                    <li> <a href="cart.html"><i id="cart-shoping" class="fa-solid fa-cart-shopping fa-xl"
+                                style="color: rgb(252, 116, 116);"></i></a>
+                    </li>
+                    <li><a class="lg:text-xl" href="index.html">Accueil</a></li>
+                    <li><a class="lg:text-xl" href="#cours">Nos cours</a></li>
+
+                    <li><a class="lg:text-xl" href="#Nos-centre">Nos centres</a></li>
 
 
                 </ul>
@@ -39,184 +44,183 @@
     </header>
     <br>
     <hr class="h-[2px] bg-blue-400">
+
+
+
     <main>
-        <section class="Hero-section">
-            <p class="mt-4 ml-3 text-blue-800 w-50 h-3 bg-[#EFF6FF] rounded-b-sm text-center text-[10px] font-bold">
-                Soutien scolaire & langues Nador </p>
-            <h1 class="mt-3 ml-2 text-4xl w-[75%] font-bold ">Trouvez le cours idéal pour votre enfant</h1>
-            <pre class="mt-3 ml-2 text-[#64748B] text-[15px] ">Des cours adaptés à son niveau, dans l'un de
+
+        <div class="lg:flex">
+            <section id="Hero-section " class="flex flex-col justify-center items-center gap-[5px]   ">
+
+                <p
+                    class="mt-4 ml-3 text-blue-800 w-50 h-3 bg-[#EFF6FF] rounded-b-sm text-center text-[10px] font-bold lg:mr-">
+                    Soutien scolaire & langues Nador </p>
+                <h1 class="mt-3 ml-2 text-5xl w-[75%] font-bold lg:mr-auto lg:ml-10">Trouvez le cours idéal pour votre
+                    enfant</h1>
+                <pre class="mt-3 ml-2 text-[#64748B] text-[15px] lg:mr-auto lg:ml-10 lg:text-2xl ">Des cours adaptés à son niveau, dans l'un de
 nos trois centres à Nador. Comparez les
 matières et préparez votre inscription,
 simplement.</pre>
+                <br>
+                <a class="w-[95%] bg-[#2563EB] text-center h-10 rounded-[16px]  py-2 text-white lg:w-[200px] lg:mr-auto lg:ml-10"
+                    href="">Découvrir les
+                    cours</a>
+                <a class="w-[95%]  text-center h-10 rounded-[16px]  py-2 border-solid border-black border-[2px] lg:w-[200px] lg:mr-auto lg:ml-10 "
+                    href="">Nos
+                    centres</a>
+                <div class="flex gap-2 lg:mr-auto lg:ml-3 ">
+                    <i class="fa-solid fa-circle-check fa-sm fa-width-auto w-[10%] mt-7"
+                        style="color: rgb(99, 230, 190);"></i>
+                    <p class="mt-4 text-[#64748B]  ">Inscription en ligne, sans paiement à cette étape.</p>
+
+                </div>
+
+
+            </section>
+
+
             <br>
-            <a class="w-[95%] bg-[#2563EB] text-center h-10 rounded-[16px]  py-2 text-white" href="">Découvrir les
-                cours</a>
-            <a class="w-[95%]  text-center h-10 rounded-[16px]  py-2 border-solid border-black border-[2px]" href="">Nos
-                centres</a>
-            <div class="flex gap-2 ">
-                <i class="fa-solid fa-circle-check fa-sm fa-width-auto w-[10%] mt-7"
-                    style="color: rgb(99, 230, 190);"></i>
-                <p class="mt-4 text-[#64748B]">Inscription en ligne, sans paiement à cette étape.</p>
 
-            </div>
-
-
-        </section>
-        <br>
-
-        <section class="flex items-center justify-center   flex-col">
-            <div class="h-[370px] w-[90%] bg-[#EFF6FF]  border-blue-500 border-[1px] rounded-[16px]">
-                <p class="mt-5 text-center text-[24px] font-medium w-[90%]">À chaque niveau, un nouvel élan.</p>
-                <div class="flex  gap-2 mt-4">
-                    <i class="fa-solid fa-pen fa-sm fa-width-auto text-center mt-5  ml-2 "
-                        style="color: rgb(116, 192, 252);"></i>
-                    <pre class="ml-4 text-[#64748B]">
+            <section class="flex items-center justify-center   flex-col lg:ml-auto lg:mr-10">
+                <div class="h-[370px] w-[100%] bg-[#EFF6FF]  border-blue-500 border-[1px] rounded-[16px]">
+                    <p class="mt-5 text-center text-[24px] font-medium w-[90%]">À chaque niveau, un nouvel élan.</p>
+                    <div class="flex  gap-2 mt-4">
+                        <i class="fa-solid fa-pen fa-sm fa-width-auto text-center mt-5  ml-2 "
+                            style="color: rgb(116, 192, 252);"></i>
+                        <pre class="ml-4 text-[#64748B]">
 <span class="text-black ">Primaire</span>
 Poser des bases solides
 </pre>
 
 
-                </div>
-                <div class="flex  gap-2 mt-4">
-                    <i class="fa-solid fa-book-open fa-sm fa-width-auto text-center mt-5  ml-2"
-                        style="color: rgb(116, 192, 252);"></i>
-                    <pre class="ml-4 text-[#64748B]">
+                    </div>
+                    <div class="flex  gap-2 mt-4">
+                        <i class="fa-solid fa-book-open fa-sm fa-width-auto text-center mt-5  ml-2"
+                            style="color: rgb(116, 192, 252);"></i>
+                        <pre class="ml-4 text-[#64748B]">
 <span class="text-black ">Collège</span>
 Comprendre et s’exercer</pre>
 
 
-                </div>
-                <div class="flex  gap-2 mt-4">
-                    <i class="fa-solid fa-user-graduate fa-sm fa-width-auto text-center mt-5  ml-2" style="color:
+                    </div>
+                    <div class="flex  gap-2 mt-4">
+                        <i class="fa-solid fa-user-graduate fa-sm fa-width-auto text-center mt-5  ml-2" style="color:
                      rgb(116, 192, 252);"></i>
 
 
-                    <pre class="ml-4 text-[#64748B]">
+                        <pre class="ml-4 text-[#64748B]">
 <span class="text-black ">Lycée</span>
 Approfondir les méthodes</pre>
 
 
+                    </div>
+                    <hr class="w-[80%] mt-5 ml-8 ">
+                    <div class="flex gap-5">
+                        <i class="fa-solid fa-language fa-sm fa-width-auto mt-7  ml-2"
+                            style="color: rgb(116, 192, 252);"></i>
+                        <p class="text-[#64748B] mt-3">Et des langues pour élargir ses horizons.</p>
+                    </div>
+
+
+
                 </div>
-                <hr class="w-[80%] mt-5 ml-8 ">
-                <div class="flex gap-5">
-                    <i class="fa-solid fa-language fa-sm fa-width-auto mt-7  ml-2"
-                        style="color: rgb(116, 192, 252);"></i>
-                    <p class="text-[#64748B] mt-3">Et des langues pour élargir ses horizons.</p>
-                </div>
+
+            </section>
+        </div>
 
 
 
-            </div>
-
-        </section>
         <br>
         <section class="mt-10 ">
             <div class="flex flex-col justify-center items-center">
                 <div>
-                    <p class="text-blue-900 font-bold ml-4">NOS COURS</p>
+                    <p class="text-blue-900 font-bold ml-4 ">NOS COURS</p>
                     <h1 class="text-4xl mt-3 ml-4 font-bold">Choisir ce qui lui correspond</h1>
                     <p class="ml-4 mt-4 text-[#64748B] w-[90%]">Du primaire au lycée, trouvez les matières à travailler
                         et les langues à découvrir.</p>
                 </div>
-                <div class="h-[400px] bg-[#EFF6FF] border-black border-[2px] w-[90%] mt-5  rounded-[16px]">
-                    <div class="flex gap-3">
+                <div
+                    class="h-[400px] lg:h-[150px] bg-[#EFF6FF] border-black border-[2px] w-[90%] lg: w-[100%] lg:bg-white lg:rounded-none lg:border-none mt-5  rounded-[16px] ">
+                    <div class="flex gap-3 lg:ml-20">
                         <i class="fa-solid fa-sliders fa-xs fa-width-auto mt-6 ml-5 "
                             style="color: rgb(116, 192, 252);"></i>
-                        <p class="mt-3 ml-1.5 font-bold">Trouver un cours</p>
+                        <p class="mt-3 ml-1.5 font-bold ">Trouver un cours</p>
 
                     </div>
-                    <div class="">
-                        <p class="mt-4 ml-3">Niveau scolaire</p>
-                        <select class="ml-3 mt-3  border-black bg-white  border-[2px] w-[80%] h-10 rounded-[5px]"
-                            name="chose" id="">
-                            <option class=" border-black  border-[2px] w-" value="chose">Tous les niveaux</option>
-                            <option value="chose">1e année primaire</option>
-                            <option value="chose">2e année primaire</option>
-                            <option value="chose">3e année primaire</option>
-                            <option value="chose">4e année primaire</option>
-                            <option value="chose">5e année primaire</option>
-                            <option value="chose">6e année collège</option>
-                            <option value="chose">1e année collège</option>
-                            <option value="chose">2e année collège</option>
-                            <option value="chose">3e année collège</option>
-                            <option value="chose">1e année lycee</option>
-                            <option value="chose">1e année bac</option>
-                            <option value="chose">2e année bac</option>
+                    <div class="lg:flex lg:justify-around">
+                        <div class="">
+                            <p class="mt-4 ml-3">Niveau scolaire</p>
+                            <select id="Niveau"
+                                class="ml-3 mt-3  border-black bg-white  border-[2px] w-[80%] h-10 rounded-[5px] lg:w-[300px]"
+                                name="chose">
+                                <option value="">Tous les niveaux</option>
+                                <option value="1e année primaire">1e année primaire</option>
+                                <option value="2e année primaire">2e année primaire</option>
+                                <option value="3e année primaire">3e année primaire</option>
+                                <option value="4e année primaire">4e année primaire</option>
+                                <option value="5e année primaire">5e année primaire</option>
+                                <option value="6e année primaire">6e année collège</option>
+                                <option value="1e année collège">1e année collège</option>
+                                <option value="2e année collège">2e année collège</option>
+                                <option value="3e année collège">3e année collège</option>
+                                <option value="1e année bac">1e année lycee</option>
+                                <option value="1e année bace">1e année bac</option>
+                                <option value="2e année bac">2e année bac</option>
 
-                        </select>
+                            </select>
+
+                        </div>
+                        <div class="">
+                            <p class="mt-4 ml-3">Matière</p>
+                            <select id="Matière"
+                                class="ml-3 mt-3 bg-white border-black  border-[2px] w-[80%] h-10 rounded-[5px]  lg:w-[300px]"
+                                name="chose">
+                                <option value="">Toutes les matières</option>
+                                <option value="Arabe">Arabe</option>
+                                <option value="Français">Français</option>
+                                <option value="Anglais">Anglais</option>
+                                <option value="Mathématiques">Mathématiques</option>
+                                <option value="Sciences de la Vie et de la Terre (SVT)">Sciences de la Vie et de la
+                                    Terre (SVT)</option>
+                                <option value="Physique-Chimie">Physique-Chimie</option>
+                                <option value="Histoire-Géographie">Histoire-Géographie</option>
+                                <option value="Éducation islamique">Éducation islamique</option>
+                                <option value="Informatique">Informatique</option>
+                                <option value="Philosophie">Philosophie</option>
+
+
+                            </select>
+
+                        </div>
+                        <div class="">
+                            <p class="mt-4 ml-3">centre</p>
+                            <select id="Centre"
+                                class="ml-3 mt-3 bg-white border-black border-[2px] w-[80%] h-10 rounded-[5px] lg:w-[300px]"
+                                name="chose">
+                                <option value="">tout les Centre</option>
+                                <option value="Nador Centre">Nador Centre</option>
+                                <option value="Hay Al Matar">Hay Al Matar</option>
+                                <option value="Selouane">Selouane</option>
+                            </select>
+                        </div>
 
                     </div>
-                    <div class="">
-                        <p class="mt-4 ml-3">Niveau scolaire</p>
-                        <select class="ml-3 mt-3 bg-white border-black  border-[2px] w-[80%] h-10 rounded-[5px]"
-                            name="chose" id="">
-                            <option class=" border-black  border-[2px] w-" value="chose">Matière</option>
-                            <option value="chose">Arabe</option>
-                            <option value="chose">Français</option>
-                            <option value="chose">Anglais</option>
-                            <option value="chose">Mathématiques</option>
-                            <option value="chose">Sciences de la Vie et de la Terre (SVT)</option>
-                            <option value="chose">Physique-Chimie</option>
-                            <option value="chose">Histoire-Géographie</option>
-                            <option value="chose">Éducation islamique</option>
-                            <option value="chose">Informatique</option>
-                            <option value="chose">Philosophie</option>
-
-
-                        </select>
-
-                    </div>
-                    <div class="">
-                        <p class="mt-4 ml-3">Niveau scolaire</p>
-                        <select class="ml-3 mt-3 bg-white  border-black  border-[2px] w-[80%] h-10 rounded-[5px]"
-                            name="chose" id="">
-                            <option class=" border-black  border-[2px] w-" value="chose">Matière</option>
-                            <option value="chose">Nador Centre</option>
-                            <option value="chose">Hay Al Matar</option>
-                            <option value="chose">Selouane</option>
-
-                        </select>
-
-                    </div>
-                   <button class="w-[80%] h-10 bg-blue-700 mt-5 ml-4 rounded-3xl">Trouver un cours</button>
-                    </div>
-
                 </div>
+            </div>
+
+            </div>
 
             </div>
 
 
         </section>
-        <section id="cours " class=" grid  grid-cols-1  mt-5    justify-items-center ">
-            <div id="cart-cours"> 
-
-                <i class="fa-solid fa-calculator mt-8  ml-8 " style="color: rgb(116, 192, 252); "></i>
-                <h3 class="mt-3 ml-8 text-2xl font-bold">Mathématiques</h3>
-                <p class="mt-3 ml-10">3e année collège</p>
-                <div class="flex gap-2">
-                    <i class="fa-solid fa-location-dot fa-sm mt-5 ml-10" style="color: rgb(116, 192, 252);"></i>
-                    <p class="mt-3">Centre Nador</p>
-                </div>
-                <div class="flex gap-2">
-                    <i class="fa-regular fa-clock fa-sm mt-5 ml-10" style="color: rgb(116, 192, 252);"></i>
-                    <p class="mt-3">Mar. et jeu. · 18h–19h30</p>
-                </div>
-                <hr class="w-[100%] mt-7 ">
-                <p class="text-2xl font-bold mt-5 ml-3 text-[#1E293B]">300 MAD</p>
-
-                <p class="text-[#1E293B] ml-3">par mois</p>
-                <button class="mt-8 ml-4 bg-[#2563EB] w-[90%] h-20 text-center text-[20px] rounded-2xl"
-                    type="button">Ajouter à ma sélection <span class="ml-2 text-2xl text-white">+</span></button>
-
-
-
-
-
-
+        <section id="cours">
+            <div id="cart-cours" class="grid grid-cols-1 gap-4 lg:grid-cols-4">
             </div>
-
         </section>
-        <section class="flex flex-col items-center">
+        <br>
+        <br>
+        <section id="Nos-centre" class="flex flex-col items-center">
             <div>
                 <h3 class="text-[#1E293B] text-3xl ml-15 mt-7">Trois centres, à Nador</h3>
                 <pre class=" mt-4 text-[15px] text-center">Choisissez votre centre lors de l'inscription.
@@ -227,7 +231,7 @@ Approfondir les méthodes</pre>
                 <div class="mt-4 flex gap-3.5 justify-center">
                     <i class="fa-solid fa-house fa-xl pt-3" style="color: rgb(116, 192, 252);"></i>
                     <h3 class="mt-0.5 text-xl">Centre Nador</h3>
-                    
+
 
                 </div>
                 <pre class="mt-7 text-center text-[15px]">Soutien scolaire et langues.
@@ -244,7 +248,7 @@ Approfondir les méthodes</pre>
                 <div class="mt-4 flex gap-3.5 justify-center">
                     <i class="fa-solid fa-house fa-xl pt-3" style="color: rgb(116, 192, 252);"></i>
                     <h3 class="mt-0.5 text-xl">Selouaner</h3>
-                    
+
 
                 </div>
                 <pre class="mt-7 text-center text-[15px]">Soutien scolaire et langues.
@@ -261,7 +265,7 @@ Approfondir les méthodes</pre>
                 <div class="mt-4 flex gap-3.5 justify-center">
                     <i class="fa-solid fa-house fa-xl pt-3" style="color: rgb(116, 192, 252);"></i>
                     <h3 class="mt-0.5 text-xl">Hay Al Matar</h3>
-                    
+
 
                 </div>
                 <pre class="mt-7 text-center text-[15px]">Soutien scolaire et langues.
@@ -275,18 +279,22 @@ Approfondir les méthodes</pre>
             </div>
 
         </section>
-        
+
     </main>
     <br>
     <hr>
-    <footer class="mt-7 flex flex-col justify-center items-center">
-        <img src="image/logo.webp " alt="" width="200px ">
-        <pre class="ml-3">Soutien scolaire et langues à Nador.
+    <br>
+    <br>
+    <footer class="mt-7 flex flex-col justify-center items-center lg:flex-row lg:justify-around">
+        <div>
+            <img src="image/logo.webp " alt="" width="200px ">
+            <pre class="ml-3">Soutien scolaire et langues à Nador.
 Un parcours simple pour choisir
  les cours de votre enfant.</pre>
- <div class="">
-    <h3  class=" ml-3.5 mt-4 text-2xl font-bold">Explorer</h3>
-      <div id="My-side-nav" class="flex justify-center ">
+        </div>
+        <div class="">
+            <h3 class=" ml-3.5 mt-4 text-2xl font-bold">Explorer</h3>
+            <div id="My-side-nav" class="flex justify-center ">
 
                 <ul>
                     <li><a href="">Accueil</a></li>
@@ -297,15 +305,15 @@ Un parcours simple pour choisir
 
                 </ul>
             </div>
- </div>
- <br>
- <hr>
- <br>
- <pre class="text-xl ml-4">© 2026 Nour Academy
+        </div>
+        <br>
+        <hr>
+        <br>
+        <pre class="text-xl ml-4">© 2026 Nour Academy
  Maquette de présentation</pre>
     </footer>
 
 
 </body>
- 
+
 </html>
