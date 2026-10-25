@@ -96,7 +96,7 @@ const nev = document.getElementById("Niveau")
 const matiere = document.getElementById("Matière")
 const center = document.getElementById("Centre")
 const itemsss = document.getElementById("items")
-
+const totalfactur = document.getElementById("facture")
 
 
 
@@ -144,9 +144,11 @@ function renderCourses(copycousrs = courses) {
     const showInHtml = copycousrs.map((project) => {
         return `
         
-       <div class="h-[400px]  border-black border-[2px] w-[90%] lg:w-full mt-5  rounded-[16px]  ">
 
-                <h3 class="mt-3 ml-8 text-2xl font-bold">${project.matiere}</h3>
+        
+       <div class="h-[420px]  border-black border-[2px] w-[90%] lg:w-80 mt-5  rounded-[16px] ml-3   ">
+
+                <h3 class="mt-3 ml-8 text-2xl font-bold ">${project.matiere}</h3>
                 <p class="mt-3 ml-10">${project.niveau}</p>
                 <div class="flex gap-2">
                     <i class="fa-solid fa-location-dot fa-sm mt-5 ml-10" style="color: rgb(116, 192, 252);"></i>
@@ -171,10 +173,13 @@ function renderCourses(copycousrs = courses) {
 }
 let arr = []
 
+
 function addToPanier(id, ele) {
     arr.push(id)
     localStorage.setItem("user-cart", JSON.stringify(arr))
     let items = (JSON.parse(localStorage.getItem("user-cart")));
+        localStorage.setItem("cart-shoping",items.length)
+
     document.getElementById("cart-shoping").innerHTML = items.length
     ele.style.backgroundColor = "#9CA3AF";
     ele.disabled = true;
@@ -184,24 +189,85 @@ function getcartitems() {
     let chose = []
     let items = (JSON.parse(localStorage.getItem("user-cart")));
     for (let i = 0; i < items.length; i++) {
-        console.log(items[i]);
         chose.push(data.find((data) => data.id == items[i]))
 
 
 
+
     }
+    carculTotal(chose)
+
     addcartTopagecart(chose)
 
 
 }
+let total = 0
+function carculTotal(items) {
+    for (let i = 0; i < items.length; i++) {
+        total += items[i].prix
+
+        totalfactur.innerHTML = total
+    }
+    totalfactur.innerHTML = "Payez maintenant : " + total
+
+}
+function totalAfterdelet(items) {
+    if (condition) {
+        
+    }
+    for (let i = 0; i < items.length; i++) {
+        total += items[i].prix
+
+        totalfactur.innerHTML = total
+    }
+    totalfactur.innerHTML = "Payez maintenant : " + total
+
+}
+function removeitems(id) {
+    let total=0
+    let chose = []
+    let items = (JSON.parse(localStorage.getItem("user-cart")));
+    for (let i = 0; i < items.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+            if (items[i] == data[j].id) {
+                if (items[i] != id) {
+                    chose.push(data[j])
+                    total+=data[j].prix
+
+                }
+
+
+
+            }
+
+
+
+
+        }
+
+
+
+    }
+    localStorage.setItem("user-cart", JSON.stringify(items.filter((item) => item != id))); 
+
+    addcartTopagecart(chose)
+    totalfactur.innerHTML = "Payez maintenant : " + total
+
+
+
+}
+
+
+
 function addcartTopagecart(items) {
+
     itemsss.innerHTML = ""
     const showInHtml = items.map((project) => {
         return `
-        
-       <div class="h-[300px]  border-black border-[2px] w-[80%] lg:w-full mt-5   rounded-[16px]  ">
+        .
+       <div class="h-[450px]  border-black border-[2px] w-[80%] lg:w-[20%] mt-5 lg:ml-4   rounded-[16px]  ">
 
-                <h3 class="mt-3 ml-8 text-2xl font-bold">${project.matiere}</h3>
+                <h3 class="mt-3 ml-8 text-2xl font-bold lg:w-[80%] lg:h-[20%]">${project.matiere}</h3>
                 <p class="mt-3 ml-10">${project.niveau}</p>
                 <div class="flex gap-2">
                     <i class="fa-solid fa-location-dot fa-sm mt-5 ml-10" style="color: rgb(116, 192, 252);"></i>
@@ -212,16 +278,25 @@ function addcartTopagecart(items) {
                     <p class="mt-3">${project.horaire}</p>
                 </div>
                 <hr class="w-[100%] mt-7 ">
-                <p class="text-2xl font-bold mt-5 ml-3 text-[#1E293B]">${project.prix} MAD </p>
+                <p class="text-2xl font-bold mt-5 ml-3 text-[#1E293B]">${project.prix}  MAD </p>
 
                 <p class="text-[#1E293B] ml-3">par mois</p>
+                  <button class="mt-8 ml-4 bg-[#FF0000] w-[90%] h-20 text-center text-[20px] rounded-2xl"
+                    type="button"  onclick="removeitems(${project.id})"   >supprimé à ma sélection </button>
+
+                
              
             </div>
+            
     `
-    })
+
+    }
+
+
+    )
+
 
     itemsss.innerHTML = showInHtml
 }
-
 renderCourses();
 listenData();
