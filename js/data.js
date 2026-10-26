@@ -1,4 +1,3 @@
-
 const courses = [
     { id: 1, matiere: "Arabe", niveau: "1e année primaire", centre: "Nador Centre", horaire: "Lun. et mer. · 16h–17h", prix: 200, icon: "fa-book" },
     { id: 2, matiere: "Français", niveau: "1e année primaire", centre: "Nador Centre", horaire: "Mar. et jeu. · 16h–17h", prix: 200, icon: "fa-book-open" },
@@ -178,13 +177,14 @@ function addToPanier(id, ele) {
     arr.push(id)
     localStorage.setItem("user-cart", JSON.stringify(arr))
     let items = (JSON.parse(localStorage.getItem("user-cart")));
-        localStorage.setItem("cart-shoping",items.length)
+    localStorage.setItem("cart-shoping", items.length)
 
     document.getElementById("cart-shoping").innerHTML = items.length
     ele.style.backgroundColor = "#9CA3AF";
     ele.disabled = true;
 }
 let data = courses
+
 function getcartitems() {
     let chose = []
     let items = (JSON.parse(localStorage.getItem("user-cart")));
@@ -202,6 +202,7 @@ function getcartitems() {
 
 }
 let total = 0
+
 function carculTotal(items) {
     for (let i = 0; i < items.length; i++) {
         total += items[i].prix
@@ -211,9 +212,10 @@ function carculTotal(items) {
     totalfactur.innerHTML = "Payez maintenant : " + total
 
 }
+
 function totalAfterdelet(items) {
     if (condition) {
-        
+
     }
     for (let i = 0; i < items.length; i++) {
         total += items[i].prix
@@ -223,8 +225,9 @@ function totalAfterdelet(items) {
     totalfactur.innerHTML = "Payez maintenant : " + total
 
 }
+
 function removeitems(id) {
-    let total=0
+    let total = 0
     let chose = []
     let items = (JSON.parse(localStorage.getItem("user-cart")));
     for (let i = 0; i < items.length; i++) {
@@ -232,7 +235,7 @@ function removeitems(id) {
             if (items[i] == data[j].id) {
                 if (items[i] != id) {
                     chose.push(data[j])
-                    total+=data[j].prix
+                    total += data[j].prix
 
                 }
 
@@ -248,7 +251,7 @@ function removeitems(id) {
 
 
     }
-    localStorage.setItem("user-cart", JSON.stringify(items.filter((item) => item != id))); 
+    localStorage.setItem("user-cart", JSON.stringify(items.filter((item) => item != id)));
 
     addcartTopagecart(chose)
     totalfactur.innerHTML = "Payez maintenant : " + total
@@ -263,7 +266,7 @@ function addcartTopagecart(items) {
 
     itemsss.innerHTML = ""
     const showInHtml = items.map((project) => {
-        return `
+            return `
         .
        <div class="h-[450px]  border-black border-[2px] w-[80%] lg:w-[20%] mt-5 lg:ml-4   rounded-[16px]  ">
 
@@ -290,7 +293,7 @@ function addcartTopagecart(items) {
             
     `
 
-    }
+        }
 
 
     )
